@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 // CORS Configuration
 const corsOptions = {
   origin: [
-    'https://carrerchowk-backend.vercel.app', // React dev server
+    'https://carrerchowk.vercel.app', // React dev server
     
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
