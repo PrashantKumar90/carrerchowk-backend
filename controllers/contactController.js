@@ -59,7 +59,7 @@ exports.sendEmail = async (req, res) => {
         <p>Thank you for contacting us! We've received your message and will respond within 24 hours.</p>
         <p><strong>Your message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
-        <p>Best regards,<br>Prashant Chaudhary</p>
+        <p>Best regards,<br>Carrer Chowk</p>
       `
     });
 
