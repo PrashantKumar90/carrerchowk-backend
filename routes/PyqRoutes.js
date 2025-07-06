@@ -6,10 +6,8 @@ const CourseDocument = require("../models/PYQModels");
 router.post("/uploadpyq", async (req, res) => {
   try {
     const { courseName, semester, subjectName, fileUrl } = req.body;
-    if(semester = null){
-      semester = 0;
-    }
-    if (!courseName  || !subjectName || !fileUrl) {
+
+    if (!courseName || !semester || !subjectName || !fileUrl) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
