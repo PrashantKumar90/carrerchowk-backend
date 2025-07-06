@@ -7,7 +7,7 @@ const courseDocumentSchema = new mongoose.Schema({
   },
   semester: {
     type: Number,
-    required: true,
+    
   },
   subjectName: {
     type: String,

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const CourseDocument = require("../models/CourseDocument");
 
-//Admin Filter 
+
 
 router.get("/documents", async (req, res) => {
   const { course, semester } = req.query;
