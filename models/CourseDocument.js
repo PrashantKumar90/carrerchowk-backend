@@ -6,9 +6,9 @@ const courseDocumentSchema = new mongoose.Schema({
     required: true,
   },
   semester: {
-    type: Number,
-    
-  },
+  type: mongoose.Schema.Types.Mixed
+},
+
   subjectName: {
     type: String,
     required: true,
