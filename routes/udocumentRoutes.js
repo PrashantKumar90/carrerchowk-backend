@@ -11,7 +11,10 @@ router.get("/documents", async (req, res) => {
     const filter = {};
 
     if (course) filter.courseName = course;
-    if (semester) filter.semester = Number(semester);
+
+    if (semester && !isNaN(Number(semester))) {
+      filter.semester = Number(semester);  
+    }
 
     const documents = await CourseDocument.find(filter);
     res.json(documents);
@@ -20,6 +23,7 @@ router.get("/documents", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+
 
 
 

@@ -2,20 +2,19 @@ const express = require("express");
 const router = express.Router();
 const CourseDocument = require("../models/CourseDocument");
 
-// GET all documents (with optional filtering by courseName and semester)
 router.post("/", async (req, res) => {
   try {
-    const { courseName, semester, page = 1, limit = 5 } = req.body; // Pagination parameters
+    const { courseName, semester } = req.body; 
     let query = {};
+    if (courseName && courseName !== "All") {
+      query.courseName = courseName;
+    }
+    if (semester && semester !== "All" && !isNaN(semester)) {
+      query.semester = Number(semester);
+    }
+    console.log("Fetching documents with filter:", query);
 
-    if (courseName && courseName !== "All") query.courseName = courseName;
-    if (semester && semester !== "All") query.semester = Number(semester);
-
-    // Get documents based on the query with pagination
-    const documents = await CourseDocument.find(query)
-      .skip((page - 1) * limit) // Skip the documents based on the page
-      .limit(limit) // Limit the number of documents per page
-      .sort({ uploadedAt: -1 }); // Sort by upload date descending
+    const documents = await CourseDocument.find(query).sort({ uploadedAt: -1 });
 
     res.status(200).json(documents);
   } catch (error) {
