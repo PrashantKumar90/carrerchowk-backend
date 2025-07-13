@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 // Hardcoded credentials
 const HARD_CODED_USER = {
   email: "prashant17924@gmail.com",
-  password: "}?cpz4W#i%;Yphg:$D4HoP)}v7QE4OyMWhzder;XQFDVp@$FuAq3y+x#",
+  password: "*PRASANT@salo!821119#",
 };
 
 // Login User
